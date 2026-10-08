@@ -1,461 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAFE AZTK | La Leyenda Continúa</title>
-  <meta name="description" content="CAFE AZTK — La bebida de los dioses. La Leyenda Continúa.">
-
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: #050505;
-      color: #fff;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.6;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(5,5,5,.96);
-      border-bottom: 1px solid #b88a2a;
-      padding: 15px 10px;
-      text-align: center;
-      backdrop-filter: blur(8px);
-    }
-
-    nav a {
-      color: #d4af37;
-      text-decoration: none;
-      margin: 0 12px;
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    nav a:hover { color: #fff; }
-
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 60px 20px;
-      background: radial-gradient(circle at center, #30250d 0%, #100d05 30%, #050505 70%);
-    }
-
-    .hero-content {
-      max-width: 950px;
-      width: 100%;
-    }
-
-    .logo {
-      width: min(92%, 620px);
-      max-height: 500px;
-      object-fit: contain;
-      margin-bottom: 25px;
-      filter: drop-shadow(0 0 18px rgba(212,175,55,.25));
-    }
-
-    .gold-line {
-      width: 150px;
-      height: 2px;
-      background: #d4af37;
-      margin: 25px auto;
-    }
-
-    .hero-title {
-      color: #d4af37;
-      font-size: clamp(34px, 7vw, 70px);
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .hero-subtitle {
-      color: #fff;
-      font-size: clamp(18px, 3vw, 27px);
-      letter-spacing: 4px;
-      font-style: italic;
-    }
-
-    .hero-description {
-      max-width: 720px;
-      margin: 25px auto 0;
-      color: #ddd;
-      font-size: 18px;
-    }
-
-    .section {
-      max-width: 1150px;
-      margin: auto;
-      padding: 85px 22px;
-      text-align: center;
-    }
-
-    .section-title {
-      color: #d4af37;
-      font-size: clamp(30px, 5vw, 48px);
-      margin-bottom: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .section-subtitle {
-      color: #fff;
-      font-size: 18px;
-      margin-bottom: 45px;
-    }
-
-    .section-text {
-      max-width: 850px;
-      margin: auto;
-      color: #ddd;
-      font-size: 19px;
-      line-height: 1.9;
-    }
-
-    .legend-section {
-      padding: 105px 20px;
-      text-align: center;
-      background: radial-gradient(circle, #3a2c0b, #050505 70%);
-      border-top: 1px solid #8f6c20;
-      border-bottom: 1px solid #8f6c20;
-    }
-
-    .legend-section h2 {
-      color: #d4af37;
-      font-size: clamp(32px, 6vw, 62px);
-      letter-spacing: 4px;
-    }
-
-    .legend-section p {
-      color: #fff;
-      font-size: 24px;
-      margin-top: 12px;
-      font-style: italic;
-    }
-
-    .cards,
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-      margin-top: 45px;
-    }
-
-    .card {
-      background: #0c0c0c;
-      border: 1px solid #8f6c20;
-      padding: 32px 22px;
-      transition: .3s;
-    }
-
-    .card:hover,
-    .product:hover {
-      transform: translateY(-6px);
-      border-color: #d4af37;
-      box-shadow: 0 10px 35px rgba(212,175,55,.15);
-    }
-
-    .card h3,
-    .product-info h3 {
-      color: #d4af37;
-      margin-bottom: 10px;
-    }
-
-    .card p,
-    .product-info p {
-      color: #ccc;
-      font-size: 16px;
-    }
-
-    .product {
-      background: #0b0b0b;
-      border: 1px solid #8f6c20;
-      overflow: hidden;
-      transition: .3s;
-    }
-
-    .product img {
-      width: 100%;
-      height: 360px;
-      object-fit: contain;
-      display: block;
-      background: #050505;
-    }
-
-    .product-info {
-      padding: 20px;
-    }
-
-    .final-section {
-      padding: 100px 20px;
-      text-align: center;
-      background: radial-gradient(circle at center, #30250d, #050505 65%);
-    }
-
-    .final-section h2 {
-      color: #d4af37;
-      font-size: clamp(35px, 6vw, 60px);
-      letter-spacing: 4px;
-    }
-
-    .final-section p {
-      margin-top: 10px;
-      font-size: 23px;
-      color: #fff;
-      font-style: italic;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 30px;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      text-decoration: none;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .button:hover {
-      background: #d4af37;
-      color: #050505;
-    }
-
-    footer {
-      text-align: center;
-      padding: 38px 20px;
-      border-top: 1px solid #8f6c20;
-      background: #030303;
-    }
-
-    footer h3 {
-      color: #d4af37;
-      letter-spacing: 3px;
-    }
-
-    footer p {
-      color: #888;
-      font-size: 14px;
-      margin-top: 8px;
-    }
-
-    @media (max-width: 600px) {
-      nav a {
-        margin: 0 5px;
-        font-size: 10px;
-      }
-
-      .hero {
-        min-height: 85vh;
-        padding: 45px 15px;
-      }
-
-      .hero-description {
-        font-size: 16px;
-      }
-
-      .section {
-        padding: 65px 17px;
-      }
-
-      .section-text {
-        font-size: 17px;
-      }
-
-      .product img {
-        height: 320px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CAFE AZTK — La Leyenda Continúa. La bebida de los dioses.">
+<title>CAFE AZTK | La Leyenda Continúa</title>
+<style>
+:root{--gold:#d4af37;--gold2:#f3d675;--black:#070707;--dark:#111;--white:#fff;--muted:#c9c9c9}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,"Times New Roman",serif;background:var(--black);color:var(--white);line-height:1.6}
+a{color:inherit;text-decoration:none}
+header{position:fixed;top:0;width:100%;z-index:20;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,175,55,.35)}
+.nav{max-width:1180px;margin:auto;padding:16px 22px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:25px;letter-spacing:4px;font-weight:800;color:var(--gold)}
+.brand small{display:block;font-size:9px;letter-spacing:3px;color:#fff;text-align:center}
+nav{display:flex;gap:24px;font-family:Arial,sans-serif;font-size:13px;text-transform:uppercase;letter-spacing:1px}
+nav a:hover{color:var(--gold)}
+.menu{display:none;background:none;border:1px solid var(--gold);color:var(--gold);padding:7px 10px}
+.hero{min-height:100vh;padding:145px 22px 80px;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:radial-gradient(circle at center, #25200d 0%, #0a0a0a 45%, #000 75%)}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(212,175,55,.18);transform:rotate(45deg);width:380px;height:380px}
+.hero:before{top:-190px;left:-190px}.hero:after{bottom:-190px;right:-190px}
+.hero-inner{max-width:900px;position:relative;z-index:1}
+.emblem{width:145px;height:145px;margin:0 auto 25px;border:2px solid var(--gold);display:grid;place-items:center;transform:rotate(45deg);box-shadow:0 0 45px rgba(212,175,55,.15)}
+.emblem span{transform:rotate(-45deg);font-size:42px;font-weight:900;letter-spacing:3px;color:var(--gold)}
+.kicker{font-family:Arial,sans-serif;letter-spacing:5px;text-transform:uppercase;color:var(--gold2);font-size:13px}
+h1{font-size:clamp(54px,10vw,105px);letter-spacing:9px;margin:8px 0;color:var(--gold);text-shadow:0 0 30px rgba(212,175,55,.18)}
+.tagline{font-size:clamp(22px,4vw,38px);font-style:italic}
+.sub{max-width:650px;margin:18px auto 30px;color:var(--muted);font-size:17px}
+.btn{display:inline-block;padding:14px 25px;border:1px solid var(--gold);color:var(--gold);font-family:Arial,sans-serif;text-transform:uppercase;letter-spacing:2px;font-size:12px;margin:6px;transition:.25s}
+.btn:hover{background:var(--gold);color:#000}
+section{padding:90px 22px}
+.wrap{max-width:1100px;margin:auto}
+.title{text-align:center;margin-bottom:48px}
+.title span{color:var(--gold);font-family:Arial,sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase}
+.title h2{font-size:42px;color:#fff;margin-top:7px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:linear-gradient(145deg,#181818,#0d0d0d);border:1px solid #2e2e2e;padding:30px;text-align:center}
+.card:hover{border-color:var(--gold)}
+.icon{font-size:38px;color:var(--gold);margin-bottom:12px}
+.card h3{color:var(--gold);font-size:24px;margin-bottom:10px}
+.card p{color:var(--muted);font-family:Arial,sans-serif;font-size:14px}
+.story{background:#0e0e0e}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.pyramid{min-height:390px;display:grid;place-items:center;background:linear-gradient(180deg,#16120a,#050505);border:1px solid #312816;position:relative;overflow:hidden}
+.pyramid:before{content:"";width:0;height:0;border-left:150px solid transparent;border-right:150px solid transparent;border-bottom:270px solid rgba(212,175,55,.13);filter:drop-shadow(0 0 25px rgba(212,175,55,.12))}
+.pyramid-label{position:absolute;bottom:35px;color:var(--gold);font-size:18px;letter-spacing:3px}
+.copy h2{font-size:42px;color:var(--gold);margin-bottom:18px}
+.copy p{color:var(--muted);font-family:Arial,sans-serif;margin-bottom:16px}
+.quote{font-size:27px;color:#fff;font-style:italic;border-left:2px solid var(--gold);padding-left:18px;margin-top:25px}
+.products .card{text-align:left}
+.price{color:var(--gold2);font-family:Arial,sans-serif;margin-top:15px;font-weight:bold}
+.contact{background:linear-gradient(135deg,#15110a,#050505)}
+.contactbox{text-align:center;max-width:750px;margin:auto}
+.contactbox p{color:var(--muted);font-family:Arial,sans-serif;margin:12px auto 25px}
+footer{border-top:1px solid #292929;padding:28px 22px;text-align:center;color:#888;font-family:Arial,sans-serif;font-size:12px}
+footer strong{color:var(--gold)}
+@media(max-width:760px){
+nav{display:none;position:absolute;top:69px;left:0;right:0;background:#050505;padding:20px;flex-direction:column;border-bottom:1px solid #333}
+nav.open{display:flex}.menu{display:block}
+.grid,.story-grid{grid-template-columns:1fr}
+.hero{padding-top:125px}.emblem{width:115px;height:115px}.emblem span{font-size:32px}
+section{padding:65px 18px}.title h2,.copy h2{font-size:34px}
+}
+</style>
 </head>
-
 <body>
+<header>
+<div class="nav">
+<a class="brand" href="#inicio">CAFE AZTK<small>LA LEYENDA CONTINÚA</small></a>
+<button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">MENÚ</button>
+<nav>
+<a href="#historia">Historia</a><a href="#productos">Café</a><a href="#esencia">Esencia</a><a href="#contacto">Contacto</a>
+</nav>
+</div>
+</header>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#leyenda">La Leyenda</a>
-    <a href="#cafe">Café</a>
-  </nav>
+<main>
+<section class="hero" id="inicio">
+<div class="hero-inner">
+<div class="emblem"><span>AZTK</span></div>
+<div class="kicker">Una tradición que despierta los sentidos</div>
+<h1>CAFE AZTK</h1>
+<div class="tagline">La bebida de los dioses</div>
+<p class="sub">Un café inspirado en la grandeza de nuestras raíces, creado para quienes saben reconocer una leyenda desde el primer aroma.</p>
+<a class="btn" href="#productos">Descubrir el café</a>
+<a class="btn" href="#contacto">Contactarnos</a>
+</div>
+</section>
 
-  <section class="hero" id="inicio">
-    <div class="hero-content">
+<section id="historia" class="story">
+<div class="wrap story-grid">
+<div class="pyramid"><div class="pyramid-label">RAÍCES · FUERZA · LEGADO</div></div>
+<div class="copy">
+<div class="title" style="text-align:left;margin-bottom:15px"><span>El origen</span></div>
+<h2>Una leyenda hecha café.</h2>
+<p>CAFE AZTK nace de una identidad que mira hacia nuestras raíces y hacia el futuro. Cada detalle busca transmitir carácter, tradición y una experiencia digna de una bebida especial.</p>
+<p>Más que café, es una historia que continúa en cada taza.</p>
+<div class="quote">“La Leyenda Continúa.”</div>
+</div>
+</div>
+</section>
 
-      <img
-        class="logo"
-        src="Screenshot_20260929_182026_Gallery.jpg"
-        alt="Logo CAFE AZTK"
-      >
-
-      <div class="gold-line"></div>
-
-      <h1 class="hero-title">La bebida de los dioses</h1>
-
-      <p class="hero-subtitle">La Leyenda Continúa</p>
-
-      <p class="hero-description">
-        Una experiencia nacida de nuestras raíces, nuestra cultura
-        y el espíritu de una leyenda que continúa generación tras generación.
-      </p>
-
-    </div>
-  </section>
-
-  <section class="section" id="leyenda">
-
-    <h2 class="section-title">Nuestra Leyenda</h2>
-
-    <p class="section-subtitle">
-      Una identidad. Una tradición. Un legado.
-    </p>
-
-    <p class="section-text">
-      CAFE AZTK nace de la inspiración en la grandeza de nuestras raíces
-      y en la riqueza cultural de México. Cada taza representa carácter,
-      tradición y orgullo.
-      <br><br>
-      No es solamente café. Es una historia que se disfruta en cada sorbo.
-    </p>
-
-    <div class="cards">
-
-      <div class="card">
-        <h3>Origen</h3>
-        <p>
-          Inspirado en nuestras raíces y en la riqueza cultural de México.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Tradición</h3>
-        <p>
-          Una identidad que honra el pasado mientras mira hacia el futuro.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Legado</h3>
-        <p>
-          Una marca creada para permanecer y formar parte de nuevas historias.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="legend-section">
-
-    <h2>La bebida de los dioses</h2>
-
-    <p>La Leyenda Continúa</p>
-
-  </section>
-
-  <section class="section" id="cafe">
-
-    <h2 class="section-title">
-      Presentaciones del Café
-    </h2>
-
-    <p class="section-subtitle">
-      CAFE AZTK — Conoce nuestras presentaciones
-    </p>
-
-    <div class="products">
-
-      <div class="product">
-        <img
-          src="Screenshot_20260929_182836_Gallery.jpg"
-          alt="Presentación CAFE AZTK"
-        >
-
-        <div class="product-info">
-          <h3>CAFE AZTK</h3>
-          <p>Presentación de CAFE AZTK.</p>
-        </div>
-      </div>
-
-      <div class="product">
-        <img
-          src="Screenshot_20260929_183609_Gallery.jpg"
-          alt="Presentación CAFE AZTK"
-        >
-
-        <div class="product-info">
-          <h3>CAFE AZTK</h3>
-          <p>La bebida de los dioses.</p>
-        </div>
-      </div>
-
-      <div class="product">
-        <img
-          src="Screenshot_20260929_183642_Gallery.jpg"
-          alt="Presentación CAFE AZTK"
-        >
-
-        <div class="product-info">
-          <h3>CAFE AZTK</h3>
-          <p>La Leyenda Continúa.</p>
-        </div>
-      </div>
-
-      <div class="product">
-        <img
-          src="Screenshot_20260929_183653_Gallery.jpg"
-          alt="Presentación CAFE AZTK"
-        >
-
-        <div class="product-info">
-          <h3>CAFE AZTK</h3>
-          <p>Una experiencia inspirada en nuestras raíces.</p>
-        </div>
-      </div>
-
-      <div class="product">
-        <img
-          src="Screenshot_20260929_183753_Gallery.jpg"
-          alt="Presentación CAFE AZTK"
-        >
-
-        <div class="product-info">
-          <h3>CAFE AZTK</h3>
-          <p>Tradición, carácter y orgullo.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="final-section">
-
-    <h2>CAFE AZTK</h2>
-
-    <p>La bebida de los dioses.</p>
-
-    <p>La Leyenda Continúa.</p>
-
-    <a class="button" href="#inicio">
-      Volver arriba
-    </a>
-
-  </section>
-
-  <footer>
-
-    <h3>CAFE AZTK</h3>
-
-    <p>
-      La Leyenda Continúa © 2026
-    </p>
-
-  </footer>
-
-</body>
-</html>
+<section id="esencia">
+<div class="wrap">
+<div class="title"><span>Nuestra esencia</span><h2>El
