@@ -11,7 +11,6 @@
 --gold:#d4af37;
 --gold2:#f3d675;
 --black:#070707;
---dark:#111;
 --white:#fff;
 --muted:#c9c9c9
 }
@@ -65,9 +64,9 @@ text-align:center
 
 nav{
 display:flex;
-gap:24px;
+gap:20px;
 font-family:Arial,sans-serif;
-font-size:13px;
+font-size:12px;
 text-transform:uppercase;
 letter-spacing:1px
 }
@@ -112,12 +111,9 @@ position:relative;
 z-index:1
 }
 
-/* LOGO CAFE AZTK */
 .logo-principal{
 margin:0 auto 25px;
-max-width:320px;
-position:relative;
-z-index:2
+max-width:320px
 }
 
 .logo-principal img{
@@ -243,7 +239,6 @@ gap:55px;
 align-items:center
 }
 
-/* SEGUNDA IMAGEN */
 .story-image{
 width:100%;
 min-height:390px;
@@ -292,6 +287,37 @@ margin-top:15px;
 font-weight:bold
 }
 
+/* GALERÍA */
+
+.gallery{
+background:#050505
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px
+}
+
+.gallery-item{
+background:#101010;
+border:1px solid #312816;
+padding:10px;
+overflow:hidden
+}
+
+.gallery-item img{
+width:100%;
+height:420px;
+object-fit:contain;
+display:block;
+transition:.3s
+}
+
+.gallery-item:hover img{
+transform:scale(1.02)
+}
+
 .contact{
 background:linear-gradient(135deg,#15110a,#050505)
 }
@@ -337,7 +363,9 @@ nav.open{display:flex}
 
 .menu{display:block}
 
-.grid,.story-grid{
+.grid,
+.story-grid,
+.gallery-grid{
 grid-template-columns:1fr
 }
 
@@ -347,9 +375,12 @@ grid-template-columns:1fr
 max-width:260px
 }
 
-section{padding:65px 18px}
+section{
+padding:65px 18px
+}
 
-.title h2,.copy h2{
+.title h2,
+.copy h2{
 font-size:34px
 }
 
@@ -360,6 +391,10 @@ min-height:300px
 .story-image img{
 height:300px
 }
+
+.gallery-item img{
+height:320px
+}
 }
 </style>
 </head>
@@ -367,6 +402,7 @@ height:300px
 <body>
 
 <header>
+
 <div class="nav">
 
 <a class="brand" href="#inicio">
@@ -382,6 +418,7 @@ MENÚ
 <a href="#historia">Historia</a>
 <a href="#productos">Café</a>
 <a href="#esencia">Esencia</a>
+<a href="#galeria">Galería</a>
 <a href="#contacto">Contacto</a>
 </nav>
 
@@ -391,12 +428,13 @@ MENÚ
 <main>
 
 <!-- INICIO -->
+
 <section class="hero" id="inicio">
 
 <div class="hero-inner">
 
 <div class="logo-principal">
-<img src="Screenshot_20260929_182026_Gallery.jpg" alt="CAFE AZTK">
+<img src="Screenshot_20260929_182026_Gallery.jpg" alt="Logo CAFE AZTK">
 </div>
 
 <div class="kicker">
@@ -428,18 +466,23 @@ Contactarnos
 
 
 <!-- HISTORIA -->
+
 <section id="historia" class="story">
 
 <div class="wrap story-grid">
 
 <div class="story-image">
+
 <img src="Screenshot_20260929_182923_Gallery.jpg" alt="CAFE AZTK">
+
 </div>
 
 <div class="copy">
 
 <div class="title" style="text-align:left;margin-bottom:15px">
+
 <span>El origen</span>
+
 </div>
 
 <h2>
@@ -461,112 +504,189 @@ Más que café, es una historia que continúa en cada taza.
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
 <!-- ESENCIA -->
+
 <section id="esencia">
 
 <div class="wrap">
 
 <div class="title">
+
 <span>Nuestra esencia</span>
+
 <h2>El espíritu AZTK</h2>
+
 </div>
 
 <div class="grid">
 
 <div class="card">
+
 <div class="icon">◆</div>
+
 <h3>Identidad</h3>
+
 <p>
 Una marca con personalidad, inspirada en símbolos
 y raíces de México.
 </p>
+
 </div>
 
 <div class="card">
+
 <div class="icon">☕</div>
+
 <h3>Experiencia</h3>
+
 <p>
 Un café pensado para convertir un momento cotidiano
 en una experiencia memorable.
 </p>
+
 </div>
 
 <div class="card">
+
 <div class="icon">✦</div>
+
 <h3>Legado</h3>
+
 <p>
 Una historia que busca permanecer, crecer y pasar
 de generación en generación.
 </p>
+
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
 <!-- PRODUCTOS -->
+
 <section id="productos" class="products story">
 
 <div class="wrap">
 
 <div class="title">
+
 <span>Descubre</span>
+
 <h2>Nuestro café</h2>
+
 </div>
 
 <div class="grid">
 
 <div class="card">
+
 <h3>CAFE AZTK</h3>
+
 <p>
 La presentación insignia de la marca.
 Un café con identidad y carácter.
 </p>
+
 <div class="price">
 Próximamente
 </div>
+
 </div>
 
 <div class="card">
+
 <h3>Edición Especial</h3>
+
 <p>
 Una selección para quienes buscan una experiencia
 premium y diferente.
 </p>
+
 <div class="price">
 Próximamente
 </div>
+
 </div>
 
 <div class="card">
+
 <h3>Para Distribuidores</h3>
+
 <p>
 Información comercial y opciones para llevar
 la leyenda a nuevos lugares.
 </p>
+
 <div class="price">
 Solicitar información
 </div>
+
 </div>
 
 </div>
+
 </div>
+
+</section>
+
+
+<!-- GALERÍA -->
+
+<section id="galeria" class="gallery">
+
+<div class="wrap">
+
+<div class="title">
+
+<span>La imagen de la leyenda</span>
+
+<h2>Galería CAFE AZTK</h2>
+
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+
+<img src="Screenshot_20260929_183653_Gallery.jpg" alt="CAFE AZTK">
+
+</div>
+
+<div class="gallery-item">
+
+<img src="Screenshot_20260929_183642_Gallery.jpg" alt="CAFE AZTK">
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
 <!-- CONTACTO -->
+
 <section class="contact" id="contacto">
 
 <div class="wrap contactbox">
 
 <div class="title">
+
 <span>Conecta con la leyenda</span>
+
 <h2>¿Quieres conocer CAFE AZTK?</h2>
+
 </div>
 
 <p>
@@ -584,6 +704,7 @@ Instagram
 </a>
 
 </div>
+
 </section>
 
 </main>
